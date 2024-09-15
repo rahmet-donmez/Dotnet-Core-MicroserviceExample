@@ -1,0 +1,31 @@
+﻿{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/todos/{everything}", // /todos/create, /todos/getall gibi /todos ile başlayan istekleri dahil ettik
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001 //todo katmanının yayınlandığı port bilgileri verildi
+        }
+      ],
+      "UpstreamPathTemplate": "/api/todos/{everything}", //gatewaye gelen bu yapıdaki istekleri /todos/{everything} url ine yönlendirecek. 
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ] //bu metodlara sahip istekleri kabul edeceğini belirttik
+    },
+    {
+      "DownstreamPathTemplate": "/categories/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5002
+        }
+      ],
+      "UpstreamPathTemplate": "/api/categories/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5000"//ocelot katmanının hangi urlden yayınladığını belirttik. ocelot katmanındaki launch.properties dosyasında yer alır
+  }
+}

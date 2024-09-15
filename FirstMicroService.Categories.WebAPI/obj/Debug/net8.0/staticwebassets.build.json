@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "rMIDHuqai8JZx3Vh53hsN5mH28Um1JAmeR7pnUAH3Ac=",
+  "Source": "FirstMicroService.Categories.WebAPI",
+  "BasePath": "_content/FirstMicroService.Categories.WebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
